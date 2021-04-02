@@ -50,7 +50,6 @@
 
 	//This function is used with the + buttons
 	function addProduct(groceryID) {
-		console.log(groceryID);
 		itemArr[groceryID]["number"]++;
 		
 		document.getElementById(itemArr[groceryID]["name"] + "ItemAmount").innerHTML = itemArr[groceryID]["number"];
@@ -69,11 +68,10 @@
 		itemArr[groceryID]["number"]--;
 		document.getElementById(itemArr[groceryID]["name"] + "ItemAmount").innerHTML = itemArr[groceryID]["number"];
 		document.getElementById(itemArr[groceryID]["name"]+"Cost").innerHTML = financial(itemArr[groceryID]["number"] * itemArr[groceryID]["price"]);
+		
 		subtotalArr[groceryID] = itemArr[groceryID]["number"] * itemArr[groceryID]["price"];
 
 		totalCost = subtotalArr.reduce(reducer);
-
-
 		totalCostHTML.innerHTML = financial(totalCost);
 	}
 
